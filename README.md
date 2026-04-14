@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" alt="Feature Swarm" width="300" />
+  <img src="icon.png" alt="Feature Swarm" width="500" />
 </p>
 
 # Feature Swarm
@@ -12,16 +12,50 @@ Inspired by Ruflo's swarm feature, adapted for Claude Code's native Agent infras
 
 You describe your app idea. Feature Swarm handles the rest:
 
-1. **Discover** -- 3 agents research features in parallel from different angles:
-   - **Competitor Analyst** -- searches the web for similar products and extracts their feature sets
-   - **User Journey Explorer** -- maps user workflows and identifies implied features
-   - **Technical Capability Scout** -- researches what modern APIs/libraries make possible
+```mermaid
+flowchart TD
+    Input["Your app description"]
 
-2. **Select** -- presents a tiered checklist (MVP / Nice-to-Have / Future) with complexity ratings and agent consensus scores. Pick specific features, select all, or just the MVP tier.
+    Input --> D
 
-3. **Research** -- spawns 1 agent per selected feature for deep competitive analysis + technical feasibility, all running in parallel.
+    subgraph D["Phase 1: Discovery (parallel)"]
+        direction LR
+        A1["Competitor\nAnalyst"]
+        A2["User Journey\nExplorer"]
+        A3["Technical\nCapability Scout"]
+    end
 
-4. **Output** -- saves structured research as markdown files, ready for the next AI session to build from.
+    D --> Merge["Merge & Deduplicate\nAssign tiers + complexity"]
+
+    Merge --> Select["Phase 2: Select\nTiered checklist\nMVP / Nice-to-Have / Future"]
+
+    Select --> R
+
+    subgraph R["Phase 3: Deep Research (parallel)"]
+        direction LR
+        R1["Agent:\nFeature 1"]
+        R2["Agent:\nFeature 2"]
+        R3["Agent:\nFeature 3"]
+        R4["Agent:\nFeature N"]
+    end
+
+    R --> Output["Phase 4: Output"]
+
+    Output --> README["docs/research/README.md\nMaster index"]
+    Output --> Brief["docs/research/project-brief.md\nStructured brief for next AI"]
+    Output --> Features["docs/research/features/\nPer-feature research files"]
+```
+
+**Phase 1: Discover** -- 3 agents research features in parallel from different angles:
+- **Competitor Analyst** -- searches the web for similar products and extracts their feature sets
+- **User Journey Explorer** -- maps user workflows and identifies implied features
+- **Technical Capability Scout** -- researches what modern APIs/libraries make possible
+
+**Phase 2: Select** -- presents a tiered checklist (MVP / Nice-to-Have / Future) with complexity ratings and agent consensus scores. Pick specific features, select all, or just the MVP tier.
+
+**Phase 3: Research** -- spawns 1 agent per selected feature for deep competitive analysis + technical feasibility, all running in parallel.
+
+**Phase 4: Output** -- saves structured research as markdown files, ready for the next AI session to build from.
 
 ## Example
 
