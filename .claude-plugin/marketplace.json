@@ -1,13 +1,14 @@
 {
   "name": "claude-feature-swarm",
+  "description": "Feature discovery swarm plugin for Claude Code",
   "owner": {
     "name": "Luca Tescari"
   },
   "plugins": [
     {
       "name": "feature-swarm",
-      "source": ".",
-      "description": "Spawn a swarm of parallel AI agents to discover, research, and document features for your next app or project"
+      "description": "Spawn a swarm of parallel AI agents to discover, research, and document features for your next app or project",
+      "source": "./"
     }
   ]
 }
