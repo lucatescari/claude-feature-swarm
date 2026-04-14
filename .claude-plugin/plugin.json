@@ -1,0 +1,11 @@
+{
+  "name": "feature-swarm",
+  "version": "1.0.0",
+  "description": "Spawn a swarm of parallel AI agents to discover, research, and document features for your next app or project",
+  "author": {
+    "name": "Luca Tescari"
+  },
+  "repository": "https://github.com/lucatescari/claude-feature-swarm",
+  "license": "MIT",
+  "keywords": ["swarm", "features", "research", "discovery", "parallel-agents", "brainstorm"]
+}
