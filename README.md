@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.png" alt="Feature Swarm" width="300" />
+</p>
+
 # Feature Swarm
 
 A Claude Code plugin that spawns a swarm of parallel AI agents to discover, research, and document features for your next app or project.
